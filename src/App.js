@@ -1,28 +1,23 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './App.css';
-
-const API_KEY = `38867792dc340fc79dffd9afef68e086`;
+import NavBar from './components/NavBar';
+import TvShow from './routes/TvShow';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Home from './routes/Home';
+import Movie from './routes/Movie';
 
 function App() {
-  const [tv, setTv] = useState([]);
-
-  useEffect(() => {
-    axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}`)
-    .then((data) => {
-      console.log(data.data.results);
-      setTv(data.data.results)
-    })
-  }, [])
-
   return (
     <div className="App">
-      {tv.map(item => (
-        <div>
-          <img src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} />
-          <div key={item.id}>{item.original_name}</div>
-        </div>
-      ))}
+      <Router>
+        <NavBar />
+
+        <Routes>
+          <Route exact path='/' element={<Home />}></Route>
+          <Route exact path="/tv" element={<TvShow />}></Route>
+          <Route exact path="/movie" element={<Movie />}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }

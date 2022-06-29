@@ -1,0 +1,26 @@
+.nav {
+    margin: auto;
+    margin-bottom: 30px;
+    background: rgb(255, 254, 254);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(255, 255, 255, 0.3) 0px 30px 60px -30px;
+}
+
+.title {
+    text-align: center;
+    font-size: 35px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.menu nav {
+    margin : 0 10px 0 10px;
+}
+
