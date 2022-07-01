@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from "./TvShow.module.css";
+import { Button } from 'bootstrap';
 
 const API_KEY = `38867792dc340fc79dffd9afef68e086`;
 
@@ -16,7 +17,14 @@ function TvShow() {
 
     return (
         <>
-            <h3 className={styles.title}>인기있는 TV쇼</h3>
+            <h3 className={styles.title}>TV쇼</h3>
+
+            <nav className={styles.navBtnGroup}>
+                <button className={styles.navBtn}>인기</button>
+                <button className={styles.navBtn}>TOP</button>
+                <button className={styles.navBtn}>최신</button>
+            </nav>
+
             <div className={styles.container}>
                 
                 {tv.map(item => (
